@@ -24,4 +24,12 @@ public class ArrayHelper {
         }
         return numbers;
     }
+
+    public static int getMax(int[] arr) {
+        int max = arr[0];
+        for (int num : arr) {
+            max = Math.max(max, num);
+        }
+        return max;
+    }
 }
