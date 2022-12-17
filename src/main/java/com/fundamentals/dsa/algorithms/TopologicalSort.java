@@ -137,9 +137,9 @@ public class TopologicalSort {
         /*
         In this example, we create a directed graph with 5 nodes and 5 edges. The graph looks like this:
             3 --> 1 --> 4 --> 5
-                  ^
-                  |
-                  2
+            |     ^
+            |     |
+            ----> 2
          */
 
         // Perform the topological sort
