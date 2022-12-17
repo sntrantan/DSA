@@ -8,6 +8,7 @@ public class ShellSort {
 /*
      https://www.programiz.com/dsa/shell-sort
      https://algs4.cs.princeton.edu/cheatsheet/
+     Visualization of Shell Sort - https://www.youtube.com/watch?v=1yDcmjLTWOg
      Shell Sort - algorithm is a generalization of insertion & bubble sort via insertion & exchanging respectively.
         It sorts elements farther apart, then decreases that gap.
         0. Choose a sequence for the interval. Here, we use shell's original sequence (N/2, N/4, ...)
