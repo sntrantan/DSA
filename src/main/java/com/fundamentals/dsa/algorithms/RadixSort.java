@@ -32,6 +32,7 @@ public class RadixSort{
         // Calculate the max number of digits
         int max = getMax(array);
         int maxDigits = 0;
+        final int BUCKET_SIZE = 10;
 
         while (max > 0) {
             max/=10;
@@ -41,7 +42,7 @@ public class RadixSort{
         // Create a queue for each digit (0-9)
 
         @SuppressWarnings("unchecked")
-        Queue<Integer>[] digitQueues = new Queue[10];
+        Queue<Integer>[] digitQueues = new Queue[BUCKET_SIZE];
         for (int i = 0; i < 10; i++) {
             digitQueues[i] = new LinkedList<Integer>();
         }
@@ -53,12 +54,12 @@ public class RadixSort{
         for (int digit = 1; digit <= maxDigits; digit++) {
             // Add items to the buckets, based off of the next largest digits place
             for (int i = 0; i < array.length; i++) {
-                digitQueues[(array[i] / divisor) % 10].add(array[i]);
+                digitQueues[(array[i] / divisor) % BUCKET_SIZE].add(array[i]);
             }
 
             // Put the items back from bucket -> array
             int i = 0;
-            for (int j = 0; j < 10; j++) {
+            for (int j = 0; j < BUCKET_SIZE; j++) {
                 while (!digitQueues[j].isEmpty()) {
                     array[i++] = digitQueues[j].remove();
                 }
